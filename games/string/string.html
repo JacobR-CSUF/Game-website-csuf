@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>String Game</title>
+</head>
+<body>
+  <h1>String Game</h1>
+  <p>string (no larger than 5 characters):</p>
+  <input id="txt" maxlength="5">
+  <button id="combBtn">Generate Combinations</button>
+
+  <h3>result</h3>
+  <div id="output"></div>
+
+  <script>
+    const input = document.getElementById("txt");
+    const out = document.getElementById("output");
+
+    function combinations(str) {
+      const chars = str.split('');
+      const used = Array(chars.length).fill(false);
+      const res = [];
+      const path = [];
+
+      function backtrack() {
+        if (path.length === chars.length) {
+          res.push(path.join(''));
+          return;
+        }
+        for (let i = 0; i < chars.length; i++) {
+          if (used[i]) continue;
+          used[i] = true;
+          path.push(chars[i]);
+          backtrack();
+          path.pop();
+          used[i] = false;
+        }
+      }
+
+      backtrack();
+      return Array.from(new Set(res)); 
+    }
+
+    document.getElementById("combBtn").onclick = () => {
+      const s = input.value.trim();
+      if (!s) { out.textContent = "no input"; return; }
+      const list = combinations(s);
+      out.innerHTML = list.join(", ");
+    };
+  </script>
+</body>
+</html>
