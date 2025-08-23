@@ -3,21 +3,6 @@ https://JacobR-CSUF.github.io/Game-website-csuf
 
 Step 2: Development Workflow with GitHub
 
-Branch Strategy:
-
-```
-Text Only
-main branch (production-ready code)
-├── feature/counter-game
-├── feature/string-game
-├── feature/random-number
-├── feature/dictionary-game
-├── feature/word-counter
-├── feature/color-game
-├── feature/shape-generator
-└── feature/home-page
-```
-
 Collaboration Workflow:
 
 Each team member creates feature branches for individual games
