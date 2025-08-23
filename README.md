@@ -1,3 +1,6 @@
+https://JacobR-CSUF.github.io/Game-website-csuf
+
+
 Step 2: Development Workflow with GitHub
 
 Branch Strategy:
@@ -46,18 +49,4 @@ your-repo/
 └── images/
     └── screenshots/
 ```
-Free Hosting with GitHub Pages
 
-Step 4: Enable GitHub Pages
-
-Go to repository Settings
-Scroll to Pages section
-Select Deploy from a branch
-Choose main branch and / (root)
-Your site will be available at: https://yourusername.github.io/your-repo-name
-
-Step 5: Automatic Deployment
-
-Every push to main branch automatically updates your live site
-No additional hosting costs
-HTTPS enabled by default
