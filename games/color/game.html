@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Color Game</title>
+  <style>
+    body {
+      background: #fff;
+      color: #000;
+      font-family: sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      width: 360px;
+      margin: 0 auto 20px auto;
+    }
+
+    .colorButton {
+      width: 40px;
+      height: 40px;
+      margin: 2px;
+      box-sizing: border-box;
+      border: 1px solid #333;
+      cursor: pointer;
+    }
+
+    .colorBox {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+      background-color: black;
+      border: 2px solid #000;
+    }
+
+    .home-button {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 48px;
+      height: 48px;
+      cursor: pointer;
+    }
+
+    .home-button img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+  <h1>Color Game</h1>
+
+  <div class="container" id="buttonGrid"></div>
+
+  <div class="colorBox" id="colorBox"></div>
+
+  <!-- Home Button -->
+  <a class="home-button" href="./">
+    <img src="https://cdn-icons-png.flaticon.com/512/1946/1946488.png" alt="Home">
+  </a>
+
+  <script>
+    const container = document.getElementById("buttonGrid");
+    const colorBox = document.getElementById("colorBox");
+    const levels = [0, 128, 255]; // RGB steps
+
+    for (let r of levels) {
+      for (let g of levels) {
+        for (let b of levels) {
+          const color = `rgb(${r}, ${g}, ${b})`;
+          const colorButton = document.createElement("div");
+          colorButton.className = "colorButton";
+          colorButton.style.backgroundColor = color;
+          colorButton.title = color;
+
+          colorButton.onclick = () => {
+            colorBox.style.backgroundColor = color;
+          };
+
+          container.appendChild(colorButton);
+        }
+      }
+    }
+  </script>
+</body>
+</html>
