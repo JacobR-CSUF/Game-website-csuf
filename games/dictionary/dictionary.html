@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary Game</title>
+</head>
+<body>
+
+    <label for="stringInput">Enter a word (car, computer, school):</label>
+    <input type="text" id="stringInput" placeholder="Type here...">
+    <button onclick="dictionary()">Submit</button>
+
+    <p id="outputArea"></p>
+
+    <script>
+        function dictionary() {
+            var definitions = ["a four-wheeled road vehicle that is powered by an engine and is able to carry a small number of people.",
+            "an electronic device for storing and processing data, typically in binary form, according to instructions given to it in a variable program.",
+            "any institution at which instruction is given in a particular discipline."];
+     
+            const inputElement = document.getElementById('stringInput');
+
+            const word = inputElement.value;
+
+            const output = document.getElementById('outputArea');
+
+            if (word == "car")
+            {
+              var value = definitions[0];
+              output.textContent = value;
+            }
+            else if (word == "computer")
+            {
+              var value = definitions[1];
+              output.textContent = value;
+            }
+            else if (word == "school")
+            {
+              var value = definitions[2];
+              output.textContent = value;
+            }
+        }
+    </script>
+
+</body>
+</html>
